@@ -6,7 +6,32 @@ namespace csharp_functions
     {
         static void Main(string[] args)
         {
+            int[] originalArray = { 2, 6, 7, 5, 3, 9 };
 
+            // stampo a video l'array che gli passo, in questo caso "originalArray"
+            Console.Write("Array originale di numeri interi: ");
+            PrintArray(originalArray);
+
+            // salvo in una variabile l'array originale con gli elementi elevati al quadrato
+            int[] squaredArray = SquareOfTheArrayElements(originalArray);
+
+            // stampo a video il nuovo array, cioè l' originalArray ma con gli elementi al suo interno elevati al quadrato
+            Console.Write("Array originale con gli elementi elevati al quadrato: ");
+            PrintArray(squaredArray);
+
+            // controllo che l'array originale non sia stato modificato
+            Console.Write("Controllo se l'array originale è stato modificato: ");
+            PrintArray(originalArray);
+
+            // salvo in una variabile integer la somma dei numeri dell'array originale
+            int sumOriginalArrayElements = SumArrayElements(originalArray);
+            // stampo a video la somma di tutti i numeri facenti parte dell'array originale
+            Console.Write($"Somma dei numeri dell'array originale: {sumOriginalArrayElements}");
+
+            // salvo in una variabile integer la somma dei numeri dell'array al quadrato
+            int sumSquaredArrayElements = SumArrayElements(squaredArray);
+            // stampo a video la somma di tutti i numeri facenti parte dell'array con gli elementi elevati al quadrato
+            Console.WriteLine($"Somma dei numeri dell'array quadrato: {sumSquaredArrayElements}");
         }
 
 
