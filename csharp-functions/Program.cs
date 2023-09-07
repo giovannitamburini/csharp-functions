@@ -32,6 +32,47 @@ namespace csharp_functions
             int sumSquaredArrayElements = SumArrayElements(squaredArray);
             // stampo a video la somma di tutti i numeri facenti parte dell'array con gli elementi elevati al quadrato
             Console.WriteLine($"Somma dei numeri dell'array quadrato: {sumSquaredArrayElements}");
+
+
+            // BONUS -------------------------------------------------------------------------------------------
+
+            Console.WriteLine();
+            Console.WriteLine("BONUS -------------------------");
+
+            Console.Write("Da quanti elementi vorresti che il tuo array di numeri interi fosse composto? ");
+            int numberOfArrayElements = int.Parse(Console.ReadLine());
+
+            int[] userArray = new int[numberOfArrayElements];
+
+            for (int i = 0; i < numberOfArrayElements; i++)
+            {
+                Console.Write($"Inserisci il {i + 1}° elemento del tuo array: ");
+                userArray[i] = int.Parse(Console.ReadLine());
+            }
+
+            Console.Write("Il tuo array: ");
+            PrintArray(userArray);
+
+            // salvo in una variabile l'array originale con gli elementi elevati al quadrato
+            int[] squaredUserArray = SquareOfTheArrayElements(userArray);
+
+            // stampo a video il nuovo array, cioè l' originalArray ma con gli elementi al suo interno elevati al quadrato
+            Console.Write("Array originale con gli elementi elevati al quadrato: ");
+            PrintArray(squaredUserArray);
+
+            // controllo che l'array originale non sia stato modificato
+            Console.Write("Controllo se l'array originale è stato modificato: ");
+            PrintArray(userArray);
+
+            // salvo in una variabile integer la somma dei numeri dell'array originale
+            int sumUserArrayElements = SumArrayElements(userArray);
+            // stampo a video la somma di tutti i numeri facenti parte dell'array originale
+            Console.WriteLine($"Somma dei numeri dell'array originale: {sumUserArrayElements}");
+
+            // salvo in una variabile integer la somma dei numeri dell'array al quadrato
+            int sumSquaredUserArrayElements = SumArrayElements(squaredUserArray);
+            // stampo a video la somma di tutti i numeri facenti parte dell'array con gli elementi elevati al quadrato
+            Console.WriteLine($"Somma dei numeri dell'array quadrato: {sumSquaredUserArrayElements}");
         }
 
 
