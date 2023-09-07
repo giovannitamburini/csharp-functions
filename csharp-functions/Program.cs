@@ -6,6 +6,7 @@ namespace csharp_functions
     {
         static void Main(string[] args)
         {
+            /*
             int[] originalArray = { 2, 6, 7, 5, 3, 9 };
 
             // stampo a video l'array che gli passo, in questo caso "originalArray"
@@ -73,6 +74,14 @@ namespace csharp_functions
             int sumSquaredUserArrayElements = SumArrayElements(squaredUserArray);
             // stampo a video la somma di tutti i numeri facenti parte dell'array con gli elementi elevati al quadrato
             Console.WriteLine($"Somma dei numeri dell'array quadrato: {sumSquaredUserArrayElements}");
+            */
+
+            Console.Write("Inserisci un numero di cui vorresti calcolare il fattoriale: ");
+            int userNumber = int.Parse(Console.ReadLine());
+
+            int fattoriale = FactorialCalculator(userNumber);
+
+            Console.WriteLine($"Il fattoriale del numero {userNumber} è {fattoriale}");
         }
 
 
@@ -135,6 +144,34 @@ namespace csharp_functions
             }
 
             return sum;
+        }
+
+
+
+        // FUNZIONI BONUS: FUNZIONI RICORSIVE
+
+        // funzione per calcolare il fattoriale di un numero
+        public static int FactorialCalculator(int factor)
+        {
+            if (factor == 0)
+                return 1;
+
+            else
+            {
+                // 1° modo
+                /*
+                int prod = 1;
+
+                for (int i = 2; i <= factor; i++)
+                {
+                    prod *= i;
+                }
+
+                return prod;
+                */
+
+                return factor * FactorialCalculator(factor - 1);
+            }
         }
     }
 }
